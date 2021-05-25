@@ -1,0 +1,43 @@
+.todo-list {
+  list-style: none;
+
+  li {
+    margin-bottom: 10px;
+  }
+
+  label,
+  .check {
+    cursor: pointer;
+  }
+
+  .check {
+    height: 0;
+    width: 0;
+    position: relative;
+
+    &::after {
+      display: inline-block;
+      content: "";
+      width: 15px;
+      height: 15px;
+      position: absolute;
+      z-index: 3;
+      left: -30px;
+      bottom: -3px;
+      border: 1px solid #777;
+    }
+
+    &.checked::after {
+      background-color: gray;
+    }
+  }
+}
+
+.loader {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+}
